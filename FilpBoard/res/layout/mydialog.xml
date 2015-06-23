@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="45dp"
+    android:layout_marginRight="45dp"
+    android:background="@drawable/mydialog_backgrond" >
+
+    <LinearLayout
+        android:id="@+id/ll_mydialog_top"
+        android:layout_width="fill_parent"
+        android:layout_height="42dp"
+        android:background="#dfb987"
+        android:orientation="horizontal"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp" >
+
+        <ImageView
+            android:id="@+id/mydialog_ic"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/image" />
+
+        <TextView
+            android:id="@+id/tv_mydialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="提示"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_mydialog_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_mydialog_top"
+        android:layout_marginTop="1dp"
+        android:background="#dfb987"
+        android:paddingBottom="20dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="8dp"
+        android:text="确认退出?"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_mydialog_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_mydialog_message"
+        android:layout_marginTop="1dp"
+        android:background="#cf9f5e"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/bt_mydialog_cacel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bt_mydialog_selector"
+            android:text="取消"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+
+        <Button
+            android:id="@+id/bt_mydialog_confirm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_mydialog_selector"
+            android:text="确认"
+            android:textColor="#fff"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+</RelativeLayout>

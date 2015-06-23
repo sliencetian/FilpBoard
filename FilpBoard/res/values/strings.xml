@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FilpBoard</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="tip">\t\t\t\t点击棋子使其全盘棋子颜色统一即可通关；点击棋子后，该棋子的 ↑ 、 ↓ 、← 、→ 包括该棋子本身都会变为相反颜色。</string>
+
+</resources>

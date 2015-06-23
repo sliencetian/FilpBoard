@@ -1,0 +1,623 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_main_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#dfb987" >
+
+    <RelativeLayout
+        android:id="@+id/ll_main_title"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="#cf9f5e" >
+
+        <ImageView
+            android:id="@+id/iv_main_title_ic"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/iv_main_title_ic"
+            android:text="@string/app_name"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/bt_main_menu"
+            android:layout_width="32dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bt_main_title_menu_selector" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_main_steps"
+        android:layout_width="64dp"
+        android:layout_height="42dp"
+        android:layout_below="@id/ll_main_title"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/step_background"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="Steps"
+            android:textColor="@color/orange"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_steps"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="0"
+            android:textColor="@color/orange"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_main_level"
+        android:layout_width="64dp"
+        android:layout_height="42dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/ll_main_title"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/step_background"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="Level"
+            android:textColor="@color/orange"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_level"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="1"
+            android:textColor="@color/orange"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <com.tz.filpboard.view.GameFilpBoardLayout
+        android:id="@+id/gfbl_main_game_filpboard"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_main_steps"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/gfbl_background"
+        android:descendantFocusability="blocksDescendants" />
+
+    <TextView
+        android:id="@+id/tv_main_explain"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gfbl_main_game_filpboard"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:text="filp all the circle to white or black"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/bt_main_save"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_main_rectangle_selector"
+            android:text="Fall Back"
+            android:textColor="#fff"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/bt_main_newgame"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_main_rectangle_selector"
+            android:text="New Game"
+            android:textColor="#fff"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_main_chooselevel_lift"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/ll_main_title"
+        android:layout_marginRight="270dp"
+        android:background="@null"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_main_chooselevel"
+        android:layout_width="270dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/ll_main_title"
+        android:background="#99000000"
+        android:descendantFocusability="blocksDescendants"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_main_chooselevel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="Choose Level"
+            android:textColor="#fff"
+            android:textSize="26sp" />
+
+        <Button
+            android:id="@+id/bt_main_set"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="35dp"
+            android:background="@drawable/bt_main_set_selector" />
+
+        <Button
+            android:id="@+id/bt_main_about"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="35dp"
+            android:background="@drawable/bt_main_about_selector" />
+
+        <ScrollView
+            android:id="@+id/sl_main_level"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/bt_main_set"
+            android:layout_below="@id/tv_main_chooselevel"
+            android:layout_marginBottom="20dp"
+            android:descendantFocusability="blocksDescendants" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_1"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="1"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_2"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="2"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_3"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="3"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_4"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="4"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_5"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="5"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_6"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="6"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_7"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="7"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_8"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="8"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_9"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="9"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_10"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="10"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_11"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="11"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_12"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="12"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_13"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="13"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_14"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="14"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_15"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="15"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_16"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="16"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_17"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="17"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_18"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="18"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_19"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="19"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_20"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="20"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_21"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="21"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_22"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="22"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_23"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="23"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_24"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="24"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_25"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="25"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_26"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="26"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_27"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="27"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_28"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="28"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_29"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="29"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/bt_chooselevel_30"
+                        android:layout_width="60dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="18dp"
+                        android:background="@drawable/bt_start_selector"
+                        android:text="30"
+                        android:textColor="#fff"
+                        android:textSize="25sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_level_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="1"
+        android:textColor="#cf9f5e"
+        android:textSize="130sp"
+        android:visibility="invisible" />
+
+</RelativeLayout>

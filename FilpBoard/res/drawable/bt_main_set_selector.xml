@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/set_normal" android:state_pressed="false"><shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+        </shape></item>
+    <item android:drawable="@drawable/set_pressed" android:state_pressed="true"><shape android:shape="rectangle">
+            <corners android:radius="10dp" />
+        </shape></item>
+
+</selector>
