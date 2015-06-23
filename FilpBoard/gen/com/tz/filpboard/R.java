@@ -628,6 +628,7 @@ public final class R {
         public static final int level_7=0x7f05001c;
         public static final int level_8=0x7f05001d;
         public static final int level_9=0x7f05001e;
+        public static final int test=0x7f05001f;
     }
     public static final class string {
         public static final int action_settings=0x7f080002;
